@@ -1,3 +1,5 @@
+resource.AddWorkshop( "2318212263" ) -- NS Lockpicking Content
+
 local PLUGIN = PLUGIN
 
 -------------------------------
