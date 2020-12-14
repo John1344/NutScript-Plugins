@@ -136,7 +136,7 @@ function ENT:openInv(activator)
 					)
 				end)
 			elseif ( nut.item.newInv ) then -- Nutscript 1.1
-				nut.item.newInv(0, "corpse", function(inventory)
+				nut.item.newInv(0, "safebox", function(inventory)
 					inventory.w = width
 					inventory.h = height
 					inventory.isSafebox = true
