@@ -9,6 +9,8 @@ local PROHIBITED_ACTIONS = {
 }
 
 function PLUGIN:CanPlayerInteractItem(client, action, itemObject, data)
+	if (nut.version != "2.0") then return end
+	
 	local inventory = nut.item.inventories[itemObject.invID]
 
 	if (inventory and inventory.isSafebox == true) then
