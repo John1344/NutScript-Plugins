@@ -57,9 +57,7 @@ function PLUGIN:OnCharacterDelete(client, id)
 
 	local invId = data[1]
 
-	nut.item.inventories[invId] = nil
-	nut.db.query("DELETE FROM nut_items WHERE _invID = " .. invId)
-	nut.db.query("DELETE FROM nut_inventories WHERE _invID = " .. invId)
+	nut.inventory.deleteByID(invId)
 
 	self.charInventoryIDs[id] = nil
 end
