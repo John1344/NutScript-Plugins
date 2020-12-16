@@ -71,14 +71,14 @@ function PLUGIN:CreateInventory(victim, victimInventory, corpse, width, height)
 
 			corpse:SetVar("LootInv", inventory)
 			corpse:CallOnRemove("RemoveLootInv", function(ent)
-
 				local lootInv = ent:GetVar("LootInv")
-				local invId = lootInv:getID()
 
-				if ( not ent.nutIsSafe and lootInv ) then
-					nut.item.inventories[invId] = nil
-					nut.db.query("DELETE FROM nut_items WHERE _invID = " .. invId)
-					nut.db.query("DELETE FROM nut_inventories WHERE _invID = " .. invId)
+				if ( lootInv ) then
+					local invId = lootInv:getID()
+							
+					if (invId) then
+						nut.inventory.deleteByID(invId)
+					end
 				end
 			end)
 
