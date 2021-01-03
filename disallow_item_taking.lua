@@ -46,6 +46,6 @@ function PLUGIN:CanPlayerTakeItem(client, item)
     if (type(item) != "Entity") then
         if (item:getData("cannotTake") == true) then
             return false
-        end
-	end
+      	end
+    end
 end
